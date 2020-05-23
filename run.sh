@@ -3,10 +3,23 @@ echo "Provisioning virtual machine..."
 echo "Installing Utilities"
 dpkg --add-architecture i386
 apt-get update  > /dev/null
-apt-get install git curl udev python-dev python-pip python-pil python-setuptools zlib1g-dev libjpeg-dev libudev-dev build-essential libusb-1.0-0-dev -y > /dev/null
-apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 libc6-dev-i386 wget gcc-arm-none-eabi libc6-dev-i386 -y > /dev/null
-pip install --upgrade setuptools
-pip install ledgerblue
+
+apt-get install software-properties-common -y
+add-apt-repository main
+add-apt-repository universe
+add-apt-repository restricted
+add-apt-repository multiverse
+
+apt-get update  > /dev/null
+
+apt-get install git curl udev python-dev python3-pip python-pil python-setuptools zlib1g-dev libjpeg-dev libudev-dev build-essential libusb-1.0-0-dev -y #> /dev/null
+apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 libc6-dev-i386 wget gcc-arm-none-eabi libc6-dev-i386 -y #> /dev/null
+
+pip3 install --upgrade pip
+pip3 install --upgrade setuptools
+pip3 install ledgerblue
+
+update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 echo "Setting up BOLOS environment"
 mkdir /opt/bolos
@@ -28,7 +41,8 @@ echo "cloning sdk for nano s"
 cd /opt/bolos/
 git clone https://github.com/LedgerHQ/nanos-secure-sdk.git
 cd nanos-secure-sdk/
-git checkout tags/nanos-1314
+#git checkout tags/nanos-131
+git checkout master
 cd /opt/bolos/
 
 echo "finetuning rights for usb access"
