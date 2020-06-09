@@ -50,9 +50,5 @@ Generate icon hex:
 
 Load app to ledger:
 
-	python.exe -m ledgerblue.loadApp --targetId 0x31100004 --path "44'/111'" --fileName C:\temp\app-bitcoin\cryptoescudo\bin\app.hex --appName "CryptoEscudo" --tlv --delete --icon 0100000000ffffff00ffffffffffffffff3ffc9ffb9fff9fff9fff9fff9ffb3ffcffffffffffffffff --dep Bitcoin
-
-
-
-
+	python.exe -m ledgerblue.loadApp --targetId 0x31100004 --path "44'/111'" --fileName C:\temp\app-cryptoescudo\bin\app.hex --appName "CryptoEscudo" --tlv --delete --icon 0100000000ffffff00ffffffffffffffff3ffc9ffb9fff9fff9fff9fff9ffb3ffcffffffffffffffff --dep Bitcoin
 
