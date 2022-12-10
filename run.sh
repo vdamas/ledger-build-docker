@@ -27,11 +27,11 @@ cd /opt/bolos
 
 echo "Installing custom compilers, can take a few minutes..."
 wget -q https://launchpad.net/gcc-arm-embedded/5.0/5-2016-q1-update/+download/gcc-arm-none-eabi-5_3-2016q1-20160330-linux.tar.bz2
-tar xjf gcc-arm-none-eabi-5_3-2016q1-20160330-linux.tar.bz2
+tar xjf gcc-arm-none-eabi-5_3-2016q1-20160330-linux.tar.bz2 --no-same-owner
 ln -s /opt/bolos/gcc-arm-none-eabi-5_3-2016q1/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc
 
 wget -q http://releases.llvm.org/4.0.0/clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-14.04.tar.xz
-tar xvf clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-14.04.tar.xz
+tar xvf clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-14.04.tar.xz --no-same-owner
 mv clang+llvm-4.0.0-x86_64-linux-gnu-ubuntu-14.04 clang-arm-fropi
 chmod 757 -R clang-arm-fropi/
 chmod +x clang-arm-fropi/bin/clang
